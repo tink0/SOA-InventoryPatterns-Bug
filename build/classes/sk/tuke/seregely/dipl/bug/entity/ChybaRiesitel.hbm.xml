@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping schema="bugtracking">
+    <class name="sk.tuke.seregely.dipl.bug.entity.ChybaRiesitel" table="`chyba-riesitel`">
+        <composite-id name="id" class="sk.tuke.seregely.dipl.bug.entity.ChybaRiesitelId">
+            <key-property name="idChyby" type="int">
+                <column name="id_chyby" />
+            </key-property>
+            <key-property name="idRiesitela" type="int">
+                <column name="id_riesitela" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="riesitel" class="sk.tuke.seregely.dipl.bug.entity.Riesitel" update="false" insert="false" fetch="select">
+            <column name="id_riesitela" not-null="true" />
+        </many-to-one>
+        <many-to-one name="chyba" class="sk.tuke.seregely.dipl.bug.entity.Chyba" update="false" insert="false" fetch="select">
+            <column name="id_chyby" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping schema="bugtracking">
+ <class name="sk.tuke.seregely.dipl.bug.entity.UzivatelProjekt" table="`uzivatel-projekt`">
+  <composite-id
+   class="sk.tuke.seregely.dipl.bug.entity.UzivatelProjektId"
+   mapped="false" name="id" unsaved-value="undefined">
+   <key-property name="idProjektu" type="int">
+    <column name="id_projektu"/>
+   </key-property>
+   <key-property name="idUzivatela" type="int">
+    <column name="id_uzivatela"/>
+   </key-property>
+  </composite-id>
+  <many-to-one class="sk.tuke.seregely.dipl.bug.entity.Projekt"
+   fetch="select" insert="false" name="projekt" update="false">
+   <column name="id_projektu" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="sk.tuke.seregely.dipl.bug.entity.Uzivatel"
+   fetch="select" insert="false" name="uzivatel" update="false">
+   <column name="id_uzivatela" not-null="true"/>
+  </many-to-one>
+ </class>
+</hibernate-mapping>

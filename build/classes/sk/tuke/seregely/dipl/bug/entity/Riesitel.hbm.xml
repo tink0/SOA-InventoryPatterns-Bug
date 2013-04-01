@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping schema="bugtracking">
+ <class name="sk.tuke.seregely.dipl.bug.entity.Riesitel" table="riesitel">
+  <id name="idRiesitela" type="int">
+   <column name="id_riesitela"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="celeMeno" type="string">
+   <column length="100" name="cele_meno"/>
+  </property>
+  <set fetch="select" inverse="true" lazy="true" name="projektRiesitels"
+   sort="unsorted" table="`projekt-riesitel`">
+   <key>
+    <column name="id_riesitela" not-null="true"/>
+   </key>
+   <one-to-many class="sk.tuke.seregely.dipl.bug.entity.ProjektRiesitel"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true"
+   name="vylepsenieRiesitels" sort="unsorted" table="`vylepsenie-riesitel`">
+   <key>
+    <column name="id_riesitela" not-null="true"/>
+   </key>
+   <one-to-many class="sk.tuke.seregely.dipl.bug.entity.VylepsenieRiesitel"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="chybaRiesitels"
+   sort="unsorted" table="`chyba-riesitel`">
+   <key>
+    <column name="id_riesitela" not-null="true"/>
+   </key>
+   <one-to-many class="sk.tuke.seregely.dipl.bug.entity.ChybaRiesitel"/>
+  </set>
+ </class>
+</hibernate-mapping>

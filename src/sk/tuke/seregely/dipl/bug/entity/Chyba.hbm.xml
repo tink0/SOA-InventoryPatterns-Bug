@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping schema="bugtracking">
+    <class name="sk.tuke.seregely.dipl.bug.entity.Chyba" table="chyba">
+        <id name="idChyby" type="int">
+            <column name="id_chyby" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="uzivatel" class="sk.tuke.seregely.dipl.bug.entity.Uzivatel" fetch="select">
+            <column name="id_uzivatela" />
+        </many-to-one>
+        <property name="popis" type="string">
+            <column name="popis" />
+        </property>
+        <set name="chybaRiesitels" table="`chyba-riesitel`" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_chyby" not-null="true" />
+            </key>
+            <one-to-many class="sk.tuke.seregely.dipl.bug.entity.ChybaRiesitel" />
+        </set>
+    </class>
+</hibernate-mapping>
