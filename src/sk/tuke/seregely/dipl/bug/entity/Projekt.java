@@ -1,6 +1,6 @@
 package sk.tuke.seregely.dipl.bug.entity;
-
-// Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0
+// default package
+// Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,8 +13,8 @@ public class Projekt implements java.io.Serializable {
 	private int idProjektu;
 	private String nazov;
 	private String popis;
-	private Set uzivatelProjekts = new HashSet(0);
-	private Set projektRiesitels = new HashSet(0);
+	private Set uzivatels = new HashSet(0);
+	private Set<Riesitel> riesitels = new HashSet<Riesitel>(0);
 
 	public Projekt() {
 	}
@@ -23,13 +23,13 @@ public class Projekt implements java.io.Serializable {
 		this.idProjektu = idProjektu;
 	}
 
-	public Projekt(int idProjektu, String nazov, String popis,
-			Set uzivatelProjekts, Set projektRiesitels) {
+	public Projekt(int idProjektu, String nazov, String popis, Set uzivatels,
+			Set riesitels) {
 		this.idProjektu = idProjektu;
 		this.nazov = nazov;
 		this.popis = popis;
-		this.uzivatelProjekts = uzivatelProjekts;
-		this.projektRiesitels = projektRiesitels;
+		this.uzivatels = uzivatels;
+		this.riesitels = riesitels;
 	}
 
 	public int getIdProjektu() {
@@ -56,20 +56,20 @@ public class Projekt implements java.io.Serializable {
 		this.popis = popis;
 	}
 
-	public Set getUzivatelProjekts() {
-		return this.uzivatelProjekts;
+	public Set getUzivatels() {
+		return this.uzivatels;
 	}
 
-	public void setUzivatelProjekts(Set uzivatelProjekts) {
-		this.uzivatelProjekts = uzivatelProjekts;
+	public void setUzivatels(Set uzivatels) {
+		this.uzivatels = uzivatels;
 	}
 
-	public Set getProjektRiesitels() {
-		return this.projektRiesitels;
+	public Set getRiesitels() {
+		return this.riesitels;
 	}
 
-	public void setProjektRiesitels(Set projektRiesitels) {
-		this.projektRiesitels = projektRiesitels;
+	public void setRiesitels(Set riesitels) {
+		this.riesitels = riesitels;
 	}
 
 }

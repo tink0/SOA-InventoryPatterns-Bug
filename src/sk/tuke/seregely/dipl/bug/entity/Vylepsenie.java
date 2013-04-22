@@ -1,6 +1,6 @@
 package sk.tuke.seregely.dipl.bug.entity;
-
-// Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0
+// default package
+// Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +13,10 @@ public class Vylepsenie implements java.io.Serializable {
 	private int idVylepsenia;
 	private Uzivatel uzivatel;
 	private String popis;
-	private Set vylepsenieRiesitels = new HashSet(0);
+	private Set riesitels = new HashSet(0);
+	private Projekt projekt;
+	private CiselnikStavov ciselnikStavov;
+	private Riesitel riesitel;
 
 	public Vylepsenie() {
 	}
@@ -23,11 +26,11 @@ public class Vylepsenie implements java.io.Serializable {
 	}
 
 	public Vylepsenie(int idVylepsenia, Uzivatel uzivatel, String popis,
-			Set vylepsenieRiesitels) {
+			Set riesitels) {
 		this.idVylepsenia = idVylepsenia;
 		this.uzivatel = uzivatel;
 		this.popis = popis;
-		this.vylepsenieRiesitels = vylepsenieRiesitels;
+		this.riesitels = riesitels;
 	}
 
 	public int getIdVylepsenia() {
@@ -54,12 +57,36 @@ public class Vylepsenie implements java.io.Serializable {
 		this.popis = popis;
 	}
 
-	public Set getVylepsenieRiesitels() {
-		return this.vylepsenieRiesitels;
+	public Set getRiesitels() {
+		return this.riesitels;
 	}
 
-	public void setVylepsenieRiesitels(Set vylepsenieRiesitels) {
-		this.vylepsenieRiesitels = vylepsenieRiesitels;
+	public void setRiesitels(Set riesitels) {
+		this.riesitels = riesitels;
+	}
+	
+	public Projekt getProjekt() {
+		return projekt;
+	}
+
+	public void setProjekt(Projekt projekt) {
+		this.projekt = projekt;
+	}
+
+	public CiselnikStavov getCiselnikStavov() {
+		return ciselnikStavov;
+	}
+
+	public void setCiselnikStavov(CiselnikStavov ciselnikStavov) {
+		this.ciselnikStavov = ciselnikStavov;
+	}
+
+	public Riesitel getRiesitel() {
+		return riesitel;
+	}
+
+	public void setRiesitel(Riesitel riesitel) {
+		this.riesitel = riesitel;
 	}
 
 }

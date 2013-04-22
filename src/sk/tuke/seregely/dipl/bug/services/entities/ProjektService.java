@@ -5,12 +5,14 @@ import javax.jws.WebService;
 
 import sk.tuke.seregely.dipl.bug.entity.CiselnikStavov;
 import sk.tuke.seregely.dipl.bug.entity.EntityDAO;
+import sk.tuke.seregely.dipl.bug.entity.ProjectDAO;
 import sk.tuke.seregely.dipl.bug.entity.Projekt;
+import sk.tuke.seregely.dipl.bug.entity.Riesitel;
 
 @WebService()
 public class ProjektService {
 
-	final EntityDAO<Projekt> projektDAO = new EntityDAO("sk.tuke.seregely.dipl.bug.entity.Projekt","id_projektu");
+	final ProjectDAO projektDAO = new ProjectDAO("sk.tuke.seregely.dipl.bug.entity.Projekt","id_projektu");
 
 	@WebMethod()
 	public Projekt retrieve(int id) {
@@ -39,6 +41,11 @@ public class ProjektService {
 	@WebMethod()
 	public Projekt update(Projekt projekt) {
 		return projektDAO.merge(projekt);
+	}
+	
+	@WebMethod()
+	public Riesitel getVeduciProjektu(int idProjektu) {
+		return projektDAO.getVeduciProjektu(idProjektu);
 	}
 	
 	

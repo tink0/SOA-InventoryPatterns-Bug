@@ -5,7 +5,6 @@ import javax.jws.WebService;
 
 import sk.tuke.seregely.dipl.bug.entity.EntityDAO;
 import sk.tuke.seregely.dipl.bug.entity.Projekt;
-import sk.tuke.seregely.dipl.bug.entity.ProjektRiesitel;
 import sk.tuke.seregely.dipl.bug.entity.Riesitel;
 
 @WebService()

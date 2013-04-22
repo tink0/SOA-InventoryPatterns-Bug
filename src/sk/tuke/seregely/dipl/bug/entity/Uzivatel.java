@@ -1,6 +1,6 @@
 package sk.tuke.seregely.dipl.bug.entity;
-
-// Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0
+// default package
+// Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +15,7 @@ public class Uzivatel implements java.io.Serializable {
 	private String celeMeno;
 	private Set vylepsenies = new HashSet(0);
 	private Set chybas = new HashSet(0);
-	private Set uzivatelProjekts = new HashSet(0);
+	private Set projekts = new HashSet(0);
 
 	public Uzivatel() {
 	}
@@ -25,13 +25,13 @@ public class Uzivatel implements java.io.Serializable {
 	}
 
 	public Uzivatel(int idUzivatela, String email, String celeMeno,
-			Set vylepsenies, Set chybas, Set uzivatelProjekts) {
+			Set vylepsenies, Set chybas, Set projekts) {
 		this.idUzivatela = idUzivatela;
 		this.email = email;
 		this.celeMeno = celeMeno;
 		this.vylepsenies = vylepsenies;
 		this.chybas = chybas;
-		this.uzivatelProjekts = uzivatelProjekts;
+		this.projekts = projekts;
 	}
 
 	public int getIdUzivatela() {
@@ -74,12 +74,12 @@ public class Uzivatel implements java.io.Serializable {
 		this.chybas = chybas;
 	}
 
-	public Set getUzivatelProjekts() {
-		return this.uzivatelProjekts;
+	public Set getProjekts() {
+		return this.projekts;
 	}
 
-	public void setUzivatelProjekts(Set uzivatelProjekts) {
-		this.uzivatelProjekts = uzivatelProjekts;
+	public void setProjekts(Set projekts) {
+		this.projekts = projekts;
 	}
 
 }

@@ -1,39 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping schema="bugtracking">
- <class name="sk.tuke.seregely.dipl.bug.entity.Uzivatel" table="uzivatel">
-  <id name="idUzivatela" type="int">
-   <column name="id_uzivatela"/>
-   <generator class="assigned"/>
-  </id>
-  <property generated="never" lazy="false" name="email" type="string">
-   <column length="50" name="email"/>
-  </property>
-  <property generated="never" lazy="false" name="celeMeno" type="string">
-   <column length="100" name="cele_meno"/>
-  </property>
-  <set fetch="select" inverse="true" lazy="true" name="vylepsenies"
-   sort="unsorted" table="vylepsenie">
-   <key>
-    <column name="id_uzivatela"/>
-   </key>
-   <one-to-many class="sk.tuke.seregely.dipl.bug.entity.Vylepsenie"/>
-  </set>
-  <set fetch="select" inverse="true" lazy="true" name="chybas"
-   sort="unsorted" table="chyba">
-   <key>
-    <column name="id_uzivatela"/>
-   </key>
-   <one-to-many class="sk.tuke.seregely.dipl.bug.entity.Chyba"/>
-  </set>
-  <set fetch="select" inverse="true" lazy="true" name="uzivatelProjekts"
-   sort="unsorted" table="`uzivatel-projekt`">
-   <key>
-    <column name="id_uzivatela" not-null="true"/>
-   </key>
-   <one-to-many class="sk.tuke.seregely.dipl.bug.entity.UzivatelProjekt"/>
-  </set>
- </class>
+    <class name="sk.tuke.seregely.dipl.bug.entity.Uzivatel" table="uzivatel">
+        <id name="idUzivatela" type="int">
+            <column name="id_uzivatela" />
+            <generator class="sequence" >
+              <param name="sequence">uzivatel_id_seq</param>
+              </generator>
+        </id>
+        <property name="email" type="string">
+            <column name="email" length="50" />
+        </property>
+        <property name="celeMeno" type="string">
+            <column name="cele_meno" length="100" />
+        </property>
+        
+        <set name="projekts" table="`uzivatel-projekt`" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_uzivatela" not-null="true" />
+            </key>
+            <many-to-many entity-name="sk.tuke.seregely.dipl.bug.entity.Projekt">
+                <column name="id_projektu" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
 </hibernate-mapping>

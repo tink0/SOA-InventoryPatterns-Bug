@@ -1,7 +1,5 @@
 package sk.tuke.seregely.dipl.bug.entity;
 
-// Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +11,10 @@ public class Chyba implements java.io.Serializable {
 	private int idChyby;
 	private Uzivatel uzivatel;
 	private String popis;
-	private Set chybaRiesitels = new HashSet(0);
+	private Set riesitels = new HashSet(0);
+	private Projekt projekt;
+	private CiselnikStavov ciselnikStavov;
+	private Riesitel riesitel;
 
 	public Chyba() {
 	}
@@ -22,12 +23,11 @@ public class Chyba implements java.io.Serializable {
 		this.idChyby = idChyby;
 	}
 
-	public Chyba(int idChyby, Uzivatel uzivatel, String popis,
-			Set chybaRiesitels) {
+	public Chyba(int idChyby, Uzivatel uzivatel, String popis, Set riesitels) {
 		this.idChyby = idChyby;
 		this.uzivatel = uzivatel;
 		this.popis = popis;
-		this.chybaRiesitels = chybaRiesitels;
+		this.riesitels = riesitels;
 	}
 
 	public int getIdChyby() {
@@ -54,12 +54,36 @@ public class Chyba implements java.io.Serializable {
 		this.popis = popis;
 	}
 
-	public Set getChybaRiesitels() {
-		return this.chybaRiesitels;
+	public Set getRiesitels() {
+		return this.riesitels;
 	}
 
-	public void setChybaRiesitels(Set chybaRiesitels) {
-		this.chybaRiesitels = chybaRiesitels;
+	public void setRiesitels(Set riesitels) {
+		this.riesitels = riesitels;
+	}
+
+	public Projekt getProjekt() {
+		return projekt;
+	}
+
+	public void setProjekt(Projekt projekt) {
+		this.projekt = projekt;
+	}
+
+	public CiselnikStavov getCiselnikStavov() {
+		return ciselnikStavov;
+	}
+
+	public void setCiselnikStavov(CiselnikStavov ciselnikStavov) {
+		this.ciselnikStavov = ciselnikStavov;
+	}
+
+	public Riesitel getRiesitel() {
+		return riesitel;
+	}
+
+	public void setRiesitel(Riesitel riesitel) {
+		this.riesitel = riesitel;
 	}
 
 }

@@ -1,6 +1,6 @@
 package sk.tuke.seregely.dipl.bug.entity;
-
-// Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0
+// default package
+// Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,9 +12,10 @@ public class Riesitel implements java.io.Serializable {
 
 	private int idRiesitela;
 	private String celeMeno;
-	private Set projektRiesitels = new HashSet(0);
-	private Set vylepsenieRiesitels = new HashSet(0);
-	private Set chybaRiesitels = new HashSet(0);
+	private boolean veduci;
+	private Set projekts = new HashSet(0);
+	private Set vylepsenies = new HashSet(0);
+	private Set chybas = new HashSet(0);
 
 	public Riesitel() {
 	}
@@ -23,13 +24,13 @@ public class Riesitel implements java.io.Serializable {
 		this.idRiesitela = idRiesitela;
 	}
 
-	public Riesitel(int idRiesitela, String celeMeno, Set projektRiesitels,
-			Set vylepsenieRiesitels, Set chybaRiesitels) {
+	public Riesitel(int idRiesitela, String celeMeno, Set projekts,
+			Set vylepsenies, Set chybas) {
 		this.idRiesitela = idRiesitela;
 		this.celeMeno = celeMeno;
-		this.projektRiesitels = projektRiesitels;
-		this.vylepsenieRiesitels = vylepsenieRiesitels;
-		this.chybaRiesitels = chybaRiesitels;
+		this.projekts = projekts;
+		this.vylepsenies = vylepsenies;
+		this.chybas = chybas;
 	}
 
 	public int getIdRiesitela() {
@@ -48,28 +49,36 @@ public class Riesitel implements java.io.Serializable {
 		this.celeMeno = celeMeno;
 	}
 
-	public Set getProjektRiesitels() {
-		return this.projektRiesitels;
+	public Set getProjekts() {
+		return this.projekts;
 	}
 
-	public void setProjektRiesitels(Set projektRiesitels) {
-		this.projektRiesitels = projektRiesitels;
+	public void setProjekts(Set projekts) {
+		this.projekts = projekts;
 	}
 
-	public Set getVylepsenieRiesitels() {
-		return this.vylepsenieRiesitels;
+	public Set getVylepsenies() {
+		return this.vylepsenies;
 	}
 
-	public void setVylepsenieRiesitels(Set vylepsenieRiesitels) {
-		this.vylepsenieRiesitels = vylepsenieRiesitels;
+	public void setVylepsenies(Set vylepsenies) {
+		this.vylepsenies = vylepsenies;
 	}
 
-	public Set getChybaRiesitels() {
-		return this.chybaRiesitels;
+	public Set getChybas() {
+		return this.chybas;
 	}
 
-	public void setChybaRiesitels(Set chybaRiesitels) {
-		this.chybaRiesitels = chybaRiesitels;
+	public void setChybas(Set chybas) {
+		this.chybas = chybas;
+	}
+
+	public boolean isVeduci() {
+		return veduci;
+	}
+
+	public void setVeduci(boolean veduci) {
+		this.veduci = veduci;
 	}
 
 }

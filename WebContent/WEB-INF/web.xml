@@ -18,4 +18,49 @@
     <servlet-name>Chyba</servlet-name>
     <url-pattern>/Chyba</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <display-name>CiselnikStavov</display-name>
+    <servlet-name>CiselnikStavov</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.bug.services.entities.CiselnikStavovService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CiselnikStavov</servlet-name>
+    <url-pattern>/CiselnikStavov</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <display-name>Projekt</display-name>
+    <servlet-name>Projekt</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.bug.services.entities.ProjektService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Projekt</servlet-name>
+    <url-pattern>/Projekt</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <display-name>Riesitel</display-name>
+    <servlet-name>Riesitel</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.bug.services.entities.RiesitelService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Riesitel</servlet-name>
+    <url-pattern>/Riesitel</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <display-name>Uzivatel</display-name>
+    <servlet-name>Uzivatel</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.bug.services.entities.UzivatelService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Uzivatel</servlet-name>
+    <url-pattern>/Uzivatel</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <display-name>Vylepsenie</display-name>
+    <servlet-name>Vylepsenie</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.bug.services.entities.VylepsenieService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Vylepsenie</servlet-name>
+    <url-pattern>/Vylepsenie</url-pattern>
+  </servlet-mapping>
 </web-app>

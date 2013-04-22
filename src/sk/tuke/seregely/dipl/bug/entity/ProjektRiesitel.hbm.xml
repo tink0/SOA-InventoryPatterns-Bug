@@ -1,26 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping schema="bugtracking">
- <class name="sk.tuke.seregely.dipl.bug.entity.ProjektRiesitel" table="`projekt-riesitel`">
-  <composite-id
-   class="sk.tuke.seregely.dipl.bug.entity.ProjektRiesitelId"
-   mapped="false" name="id" unsaved-value="undefined">
-   <key-property name="idRiesitela" type="int">
-    <column name="id_riesitela"/>
-   </key-property>
-   <key-property name="idProjektu" type="int">
-    <column name="id_projektu"/>
-   </key-property>
-  </composite-id>
-  <many-to-one class="sk.tuke.seregely.dipl.bug.entity.Projekt"
-   fetch="select" insert="false" name="projekt" update="false">
-   <column name="id_projektu" not-null="true"/>
-  </many-to-one>
-  <many-to-one class="sk.tuke.seregely.dipl.bug.entity.Riesitel"
-   fetch="select" insert="false" name="riesitel" update="false">
-   <column name="id_riesitela" not-null="true"/>
-  </many-to-one>
- </class>
+    <class name="sk.tuke.seregely.dipl.bug.entity.ProjektRiesitel" table="projektriesitel">
+        <id name="idProjektRiesitel" type="int">
+            <column name="id_projektriesitel" />
+            <generator class="sequence" >
+              <param name="sequence">projekt_riesitel_id_seq</param>
+              </generator>
+        </id>
+        <many-to-one name="riesitel" class="sk.tuke.seregely.dipl.bug.entity.Riesitel" fetch="select">
+            <column name="id_riesitela" not-null="true" />
+        </many-to-one>
+        <many-to-one name="projekt" class="sk.tuke.seregely.dipl.bug.entity.Projekt" fetch="select">
+            <column name="id_projektu" not-null="true" />
+        </many-to-one>
+        
+    </class>
 </hibernate-mapping>

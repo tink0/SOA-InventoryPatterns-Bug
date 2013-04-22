@@ -4,7 +4,10 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import sk.tuke.seregely.dipl.bug.entity.Chyba;
+import sk.tuke.seregely.dipl.bug.entity.CiselnikStavov;
 import sk.tuke.seregely.dipl.bug.entity.EntityDAO;
+import sk.tuke.seregely.dipl.bug.entity.Projekt;
+import sk.tuke.seregely.dipl.bug.entity.Riesitel;
 import sk.tuke.seregely.dipl.bug.entity.Uzivatel;
 
 @WebService()
@@ -27,6 +30,26 @@ public class ChybaService {
 		chybaDAO.persist(novaChyba);
 		
 		return novaChyba;
+	}
+	
+	@WebMethod()
+	public Chyba createWithProjekt(String popis, Uzivatel uzivatel, Projekt projekt) {
+		Chyba novaChyba = new Chyba();
+	
+		novaChyba.setPopis(popis);
+		novaChyba.setUzivatel(uzivatel);
+		novaChyba.setProjekt(projekt);
+
+		chybaDAO.persist(novaChyba);
+		
+		return novaChyba;
+	}
+	
+	@WebMethod()
+	public Chyba updateWithRiesitel(Chyba chyba, Riesitel riesitel) {
+		chyba.setRiesitel(riesitel);
+		chybaDAO.merge(chyba);
+		return chyba;
 	}
 	
 	@WebMethod()

@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 29, 2013 7:59:27 PM by Hibernate Tools 4.0.0 -->
+<!-- Generated Apr 6, 2013 9:28:57 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping schema="bugtracking">
  <class name="sk.tuke.seregely.dipl.bug.entity.CiselnikStavov" table="ciselnik_stavov">
   <id name="idStavu" type="int">
    <column name="id_stavu"/>
-   <generator class="assigned"/>
+   <generator class="sequence" >
+              <param name="sequence">ciselnik_stavov_id_seq</param>
+              </generator>
   </id>
   <property generated="never" lazy="false" name="nazov" type="string">
    <column length="200" name="nazov"/>
